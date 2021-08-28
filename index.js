@@ -42,17 +42,8 @@ const getListTiengVietWord = async()=>{
 
 
     //Random
-    const nums = new Set();
-    while(nums.size !== 50) {
-        nums.add(Math.floor(Math.random() * (result.length-1)) + 1);
-    }
 
-    const distinctListResult = [];
-    [...nums].forEach(el => {
-        distinctListResult.push([result[el], "0"])
-    })
-
-    return distinctListResult;
+    return result.map(el => [el, "0"]);
 }
 
 const updateData = async(added, removed)=>{
